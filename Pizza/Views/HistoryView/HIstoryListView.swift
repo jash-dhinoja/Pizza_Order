@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HIstoryListView: View {
+struct HistoryListView: View {
     var body: some View {
         List(0..<5){ item in
             HistoryRowView()
@@ -17,6 +17,6 @@ struct HIstoryListView: View {
 
 struct HIstoryListView_Previews: PreviewProvider {
     static var previews: some View {
-        HIstoryListView()
+        HistoryListView()
     }
 }

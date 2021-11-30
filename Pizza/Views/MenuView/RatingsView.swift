@@ -8,10 +8,17 @@
 import SwiftUI
 
 struct RatingsView: View {
+    var count: Int = 4
+    var rating: [String]{
+        let symbolName = "\(count).circle"
+        return Array(repeating: symbolName, count: count)
+    }
     var body: some View {
         HStack {
-            ForEach(0..<4){ item in
-                Image("Pizza Slice")
+            ForEach(rating, id: \.self){ item in
+                Image(systemName: item)
+                    .font(.headline)
+                    .foregroundColor(Color("G4"))
             }
         }
     }

@@ -9,9 +9,23 @@ import SwiftUI
 
 struct PageTitleView: View {
     var title: String
+    @State var isOrderDisplayed: Bool! = nil
     var body: some View {
-        Text(title)
-            .font(.largeTitle)
+        HStack{
+            Spacer()
+            Text(title)
+                .font(.largeTitle)
+                .fontWeight(.heavy)
+                .bold()
+            
+        }.overlay(
+            Image(systemName: isOrderDisplayed ?? false ? "chevron.up.square" : "chevron.down.square")
+                .font(.title),
+            alignment: .leading
+        )
+            .padding()
+            .foregroundColor(Color("G1"))
+            .background(Color("G4"))
     }
 }
 
